@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<title> Addition App By KS </title>
+		<style>
+			* { font-size: 50px; font-familt:Calibri; }
+			body { background-color: lightyellow; }
+		</style>
+		<script>
+			let find=() => {
+				event.preventDefault();
+				let num1=document.getElementById("num1");
+				let num2=document.getElementById("num2");
+				let msg=document.getElementById("msg");
+
+				if(num1.value=="")
+				{
+					alert("First Number Is Empty");
+					msg.innerHTML="";
+					num1.focus();
+					return;
+				}
+				if(num2.value=="")
+				{
+					alert("Second Number Is Empty");
+					msg.innerHTML="";
+					num2.focus();
+					return;
+				}
+				
+				let res=parseFloat(num1.value) + parseFloat(num2.value);
+				let ans="Result is " + res.toFixed(2);
+				msg.innerHTML=ans;
+			}
+		</script>
+	</head>
+	<body>
+	<center>
+		<h1> Addition App </h1>
+		<form onsubmit="find()">
+		<input type="number" step="any" placeholder="Enter First Number" id="num1"/>
+		<br/><br/>
+		<input type="number" step="any" placeholder="Enter Second Number" id="num2"/>
+		<br/><br/>
+		<input type="submit" value="Add" />	
+		</form>
+		<h1 id="msg"></h1>
+	</center>
+	</body>
+</html>
